@@ -1,2 +1,26 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% content_for :topjs do %>
+  <script>
+      window.endorsementsList = <%= @endorsements.to_json.html_safe %>;
+  </script>
+<% end %>
+
+
+
+<div class="cover"></div><!-- end .cover -->
+
+    <div class="main">
+      <div class="main-interior">
+        <section class="dark-interior">
+            <p class="logo">Friend the Vote</p>
+        </section>
+        <section class="light-interior">
+          <% if current_user %>
+            <p>Hello, <%= current_user.name %>!</p>
+          <% else %>
+            <p><%= link_to "Add your name with Facebook", "/auth/facebook", id: "sign-in", class: "btn" %></p>
+          <% end %>
+        </section>
+      </div><!--end .main-interior -->
+    </div><!--end .main -->
+
+<div id="map"></div><!--end #map -->
