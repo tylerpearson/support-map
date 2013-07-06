@@ -12,6 +12,7 @@
  *= require normalize
  *= require global
  *= require map
+ *= require MarkerCluster
  * require_tree .
  */
 

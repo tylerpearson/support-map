@@ -30,6 +30,7 @@ gem "koala", "~> 1.7.0rc1"
 gem "geocoder"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem "gon"
 gem 'jbuilder', '~> 1.2'
 
 group :doc do
