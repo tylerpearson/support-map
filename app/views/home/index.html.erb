@@ -1,29 +1,42 @@
 <div class="cover"></div><!-- end .cover -->
 
     <div class="main">
-      <div class="main-interior">
-        <section class="dark-interior">
-            <p class="logo">Friend the Vote</p>
-        </section>
-        <section class="light-interior">
-          <% if current_user %>
-            <p>Hello, <%= current_user.name %>!</p>
-            <%= form_for(@user, remote: true) do |f| %>
+        <div class="main-interior">
 
-              <%= f.label :zip_code %>:
-              <%= f.text_field :zip_code %><br>
+            <div class="row">
+                <p class="logo">Friend the Vote</p>
+            </div>
 
-              <%= f.label :comment %>
-              <%= f.text_area :comment %><br>
+            <% if current_user %>
 
-              <%= f.submit %>
+                <div class="row">
+                    <p>Hello, <%= current_user.name %>!</p>
+                </div>
+
+                <div class="row">
+                    <%= form_for(@user, remote: true) do |f| %>
+                        <%= f.label :zip_code %>:
+                        <%= f.text_field :zip_code %><br>
+
+                        <%= f.label :comment %>
+                        <%= f.text_area :comment %><br>
+
+                        <%= f.submit %>
+                    <% end %>
+                </div>
+
+
+            <% else %>
+
+                <div class="row">
+                    <%= link_to "Add your name with Facebook", "/auth/facebook", id: "sign-in", class: "btn btn-facebook" %>
+                </div>
 
             <% end %>
-          <% else %>
-            <p><%= link_to "Add your name with Facebook", "/auth/facebook", id: "sign-in", class: "btn" %></p>
-          <% end %>
-        </section>
-      </div><!--end .main-interior -->
+
+        </div><!--end .main-interior -->
     </div><!--end .main -->
+
+
 
 <div id="map"></div><!--end #map -->

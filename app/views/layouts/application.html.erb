@@ -3,9 +3,11 @@
 <head>
   <title>Endorsement Map</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+
   <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'></script>
-  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css' rel='stylesheet' />
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css' rel='stylesheet'>
 
   <!--[if lte IE 8]>
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.ie.css' rel='stylesheet' >
@@ -21,7 +23,7 @@
       <% if current_user %>
         <%= link_to "Sign out", signout_path, id: "sign-out" %>
       <% else %>
-        <%= link_to "Add your name with Facebook", "/auth/facebook", id: "sign-in"  %>
+        <%= link_to "Add your name with Facebook", "/auth/facebook", id: "sign-in" %>
       <% end %>
     </div>
 

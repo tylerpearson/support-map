@@ -10,20 +10,30 @@ html, body {
     font-family: "proxima nova", sans-serif;
 }
 
+
 a {
 
 }
 
 .btn {
     padding: 14px 28px;
-    background: blue;
+    background: darken($blue-dark,10%);
     display: inline-block;
-    color: #3d7cff;
     color: #fff;
     border-radius: 3px;
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 13px;
+    font-size: 14px;
+    &:hover {
+        background-color: $green;
+    }
+}
+
+.btn-facebook {
+    background-image: url('/assets/facebook-icon.png');
+    background-size: 9px 20px;
+    background-repeat: no-repeat;
+    background-position: 22px center;
+    padding-left: 50px;
 }
 
 .wrapper {
@@ -53,53 +63,31 @@ a {
     right: 0;
     bottom: 0;
     z-index: 9;
-    background-color: rgba(255,255,255,0);
+    background-color: rgba($blue-dark,0.8);
 }
 
-.logo-container {
-    display: inline-block;
-}
-
-    .logo {
-        font-size: 16px;
-        line-height: 1;
-        font-family: "pacifico";
-        text-transform: lowercase;
-        font-weight: normal;
-        margin: 15px auto;
-        display: block;
-        text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-    }
 
 .main {
     position: absolute;
-    background: #fff;
     max-width: 90%;
     min-width: 400px;
     background-color: #fff;
-    background-color: rgba(255,255,255,0.75);
+    background-color: rgba(255,255,255,1);
     left: 50%;
-    top: 10%;
-    margin-left: -150px;
+    top: 15%;
+    margin-left: -200px;
     position: absolute;
     z-index: 10;
     text-align: center;
+    border: solid 1px darken($blue-dark,1%);
     border-radius: 3px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    box-shadow: 0 2px 5px rgba(0,0,0,.11);
 }
 
-    .dark-interior {
-        margin: 10px;
-        background: #3d7cff;
-        padding: 10px;
-        color: #fff;
-        border-radius: 3px;
-        a {
-            color: #fff;
-        }
+.row {
+    border-top: solid 1px #d7d7d7;
+    padding: 20px 0;
+    &:first-child {
+        border-top: 0;
     }
-
-    .light-interior {
-        //background-color: #fff;
-        padding: 5px 0;
-    }
+}
