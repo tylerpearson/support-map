@@ -1,5 +1,7 @@
 EndorsementMap::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :users
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

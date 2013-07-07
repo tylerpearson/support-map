@@ -27,7 +27,14 @@ gem 'jquery-rails'
 gem 'omniauth-facebook', '1.4.0'
 gem "koala", "~> 1.7.0rc1"
 
+# geocoding info
 gem "geocoder"
+
+# admin panel
+gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'ransack',             github: 'ernie/ransack',         branch: 'rails-4'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'formtastic',          github: 'justinfrench/formtastic'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "gon"
