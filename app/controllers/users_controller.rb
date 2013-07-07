@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_columns(params[:user])
+        UserMailer.admin_notification_email(@user).deliver
+
         format.json { render json: @user, :only => [:id, :name] }
       else
         format.json { render json: @user.errors, status: :unprocessable_entity }

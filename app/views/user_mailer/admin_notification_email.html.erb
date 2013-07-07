@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hello!</p>
+
+    <p>Just a heads up that <%= @user.name %><%= " from #{@user.location} (#{@user.zip_code})" unless @user.location.nil? %> added an endorsement.</p>
+
+    <p><%= @user.first_name %> said: "<%= @user.comment %>"</p>
+
+    <p>Have a great day!</p>
+  </body>
+</html>
