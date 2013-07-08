@@ -82,7 +82,7 @@ a {
     right: 0;
     bottom: 0;
     z-index: 9;
-    background-color: rgba($blue-dark,0.8);
+    background-color: rgba($blue-dark,0.5);
 }
 
 .title {
@@ -114,7 +114,7 @@ a {
     position: absolute;
     z-index: 10;
     text-align: center;
-    border: solid 1px darken($blue-dark,1%);
+    //border: solid 1px darken($blue-dark,1%);
     border-radius: 3px;
     box-shadow: 0 2px 5px rgba(0,0,0,.11);
 }
