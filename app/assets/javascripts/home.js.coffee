@@ -13,4 +13,4 @@ $(document).ready ->
   $editUser.on("ajax:success", (e, data, status, xhr) ->
     hideMain()
   ).bind "ajax:error", (e, xhr, status, error) ->
-    $('.content').html "<p>Error. Please try again.</p>"
+    $('.content').html "<p class=\"error\">Error. Please try again.</p>"
