@@ -1,0 +1,63 @@
+.content {
+    line-height: 1.5;
+    font-size: 14px;
+    p {
+        margin-bottom: 15px;
+        margin-top: 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+
+.form {
+    text-align: left;
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    input:not([type="submit"]),
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: solid 1px darken($gray-light,5%);
+        border-radius: 3px;
+        &:focus {
+            border: solid 1px lighten($blue-dark,10%);
+            box-shadow: 0 0 3px fade-in($blue-dark,0.1);
+            outline: 0;
+        }
+    }
+
+    textarea {
+        padding: 10px;
+        min-height: 80px;
+        font-size: 14px;
+        font-family: $font-primary;
+        line-height: 1.33333333;
+    }
+
+    fieldset {
+        margin-bottom: 20px;
+        margin-top: 0;
+        border: 0;
+        padding: 0 5px 0 5px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    input[type="submit"] {
+        border: 0;
+        border-radius: 3px;
+        outline: none;
+    }
+
+}

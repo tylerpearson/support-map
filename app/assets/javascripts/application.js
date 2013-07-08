@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.cookie
 //= require leaflet.markercluster.js
-//= require_tree .
+//= require map.js
+//= require facebook
+//= require home
+// require_tree .

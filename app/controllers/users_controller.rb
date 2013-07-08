@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_columns(params[:user])
         UserMailer.admin_notification_email(@user).deliver
+        cookies[:added_name] = { :value => true, :expires => 1.month.from_now }
 
         format.json { render json: @user, :only => [:id, :name] }
       else

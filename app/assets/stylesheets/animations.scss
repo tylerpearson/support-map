@@ -1,0 +1,44 @@
+@-webkit-keyframes fade-out {
+    0% { opacity: 1; }
+    25% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+.cover,
+.main {
+    -webkit-animation: fade-out .25s;
+    -moz-animation-name: fade-out .25s;
+    -ms-animation-name: fade-out .25s;
+    -o-animation-name: fade-out .25s;
+    animation-name: fade-out .25s;
+}
+
+body {
+  #map {
+      filter: grayscale(1);
+      -webkit-filter: grayscale(1);
+      -moz-filter: grayscale(1);
+      -o-filter: grayscale(1);
+      -ms-filter: grayscale(1);
+  }
+}
+
+.hide-main {
+
+    #map {
+        filter: none;
+        -webkit-filter: none;
+        -moz-filter: none;
+        -o-filter: none;
+        -ms-filter: none;
+    }
+
+    .cover,
+    .main {
+      display: none;
+    }
+}
+
+
+
