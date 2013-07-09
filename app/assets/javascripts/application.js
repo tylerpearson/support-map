@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.cookie
+//= require mapbox.js
 //= require leaflet.markercluster.js
 //= require map.js
 //= require facebook
