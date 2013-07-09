@@ -20,7 +20,7 @@
                         </fieldset>
 
                         <fieldset>
-                            <%= f.label :comment, "Why are you supporting Jake?" %>
+                            <%= f.label :comment, "Share why you are supporting #{ENV['CAMPAIGN_NAME']}" %>
                             <%= f.text_area :comment %>
                         </fieldset>
                     </div>
@@ -33,13 +33,13 @@
             <% else %>
 
                 <div class="row">
-                    <h1 class="title">Jake for Governor</h1>
+                    <h1 class="title"><%= ENV["CAMPAIGN_NAME"] %></h1>
                     <h2 class="sub-title">Endorsement Map</h2>
                 </div>
 
                 <div class="row">
                     <div class="content">
-                        <p>Add your name velit massa placerat tortor ut aenean cursus nec, magna eu ac.</p>
+                        <%= ENV["INTRO_HTML"].html_safe %>
                     </div>
                 </div>
 

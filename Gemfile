@@ -28,6 +28,8 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 
+gem 'figaro'
+
 gem 'omniauth-facebook', '1.4.0'
 gem "koala", "~> 1.7.0rc1"
 
