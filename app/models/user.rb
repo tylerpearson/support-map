@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
 
-  geocoded_by :location
+  geocoded_by :address
   after_validation :geocode
 
   def self.from_omniauth(auth)
@@ -18,6 +18,15 @@ class User < ActiveRecord::Base
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
+    end
+  end
+
+
+  def address
+    if zip_code
+      "#{zip_code}"
+    elsif !location.nil?
+      "#{location}"
     end
   end
 

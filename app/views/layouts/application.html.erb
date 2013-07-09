@@ -22,11 +22,23 @@
 </head>
 <body>
   <div class="wrapper">
-    <div class="top-info">
+
+    <% unless current_user %>
+      <% link_to "Add your name with Facebook", "/auth/facebook", id: "sign-in" %>
+    <% end %>
+
+    <% if current_user %>
+      <div class="top-info">
+        <header class="top-info-header">
+          <h1 class="top-info-title">Jake for Governor</h1>
+          <h2 class="top-info-sub-title">Endorsement Map</h2>
+        </header>
+      </div>
+    <% end %>
+
+    <div class="bottom-info">
       <% if current_user %>
         <%= link_to "Sign out", signout_path, id: "sign-out" %>
-      <% else %>
-        <%= link_to "Add your name with Facebook", "/auth/facebook", id: "sign-in" %>
       <% end %>
     </div>
 

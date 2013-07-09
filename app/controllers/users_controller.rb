@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         UserMailer.admin_notification_email(@user).deliver
         cookies[:added_name] = { :value => true, :expires => 1.month.from_now }
 
-        format.json { render json: @user, :only => [:id, :name] }
+        format.json { render json: @user, :only => [:id, :name, :location, :comment, :latitude, :longitude] }
       else
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

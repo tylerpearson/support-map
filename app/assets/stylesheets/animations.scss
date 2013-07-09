@@ -26,6 +26,10 @@ body {
 
 .hide-main {
 
+    .top-info-header {
+      display: block;
+    }
+
     #map {
         filter: none;
         -webkit-filter: none;
