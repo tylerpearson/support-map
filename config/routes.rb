@@ -4,6 +4,10 @@ EndorsementMap::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :users
 
+  namespace :api do
+    resources :friends, :defaults => { :format => 'json' }
+  end
+
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]

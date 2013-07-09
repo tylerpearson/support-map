@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  validates :provider, :first_name, :oauth_token, :name, :presence => true
+  validates_uniqueness_of :uid
 
   geocoded_by :address
   after_validation :geocode
