@@ -30,6 +30,8 @@ gem 'jquery-rails'
 
 gem 'figaro'
 
+gem 'httparty'
+
 gem 'omniauth-facebook', '1.4.0'
 gem "koala", "~> 1.7.0rc1"
 

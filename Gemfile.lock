@@ -110,6 +110,9 @@ GEM
       activesupport (>= 3.2, < 5)
     hashie (2.0.5)
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -137,6 +140,7 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
+    multi_xml (0.5.4)
     multipart-post (1.2.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -227,6 +231,7 @@ DEPENDENCIES
   formtastic!
   geocoder
   gon
+  httparty
   inherited_resources!
   jbuilder (~> 1.2)
   jquery-rails
