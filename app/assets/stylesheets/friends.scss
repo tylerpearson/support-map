@@ -7,15 +7,11 @@
 
 .big-content {
     position: absolute;
-    left: 10%;
+    left: 15%;
     top: 15%;
-    width: 80%;
-    //background-color: #fff;
-    //background-color: rgba(#fff,0.5);
-    //min-height: 400px;
+    width: 70%;
     max-height: 100%;
     border-radius: 3px;
-    //padding: 40px;
     display: none;
     z-index: 14;
     text-align: center;
@@ -25,9 +21,16 @@
     }
 }
 
+.friends-title {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 1px rgba(darken($blue-dark,30%),0.9);
+}
+
     .friend-container {
         display: inline-block;
-        width: 22%;
+        width: 25%;
         margin: 0 10px 20px 10px;
         cursor: pointer;
         padding: 7px 5px;
@@ -35,18 +38,14 @@
         border-radius: 3px;
         box-shadow: 0 2px 5px rgba(0,0,0,.11);
 
+        display: none;
         &:hover {
-
-
+            position: relative;
+            top: 1px;
             .friend-name {
                 color: $green;
             }
         }
-        &:hover {
-            position: relative;
-            top: 1px;
-        }
-
         &.friend-selected {
             position: relative;
             top: 1px;
@@ -54,7 +53,31 @@
                 color: $green;
             }
         }
+        &.friend-visible {
+            display: inline-block;
+            @extend .fade-in;
+        }
     }
+
+        @for $i from 0 through 5 {
+            .friend-#{$i} {
+                // display: inline-block;
+            }
+        }
+
+        @for $i from 6 through 100 {
+            .friend-#{$i} {
+                display: none;
+            }
+        }
+
+        .show-more-friends {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
 
 
     .avatar-wrap {

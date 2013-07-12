@@ -4,6 +4,22 @@
     100% { opacity: 0; }
 }
 
+@-webkit-keyframes fade-in {
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+.fade-in {
+    -webkit-animation: fade-in .5s;
+    -moz-animation-name: fade-in .5s;
+    -ms-animation-name: fade-in .5s;
+    -o-animation-name: fade-in .5s;
+    animation-name: fade-in .5s;
+}
+
+
 
 .cover,
 .main {
@@ -40,6 +56,16 @@ body {
 
     .main {
       display: none;
+    }
+}
+
+.cover {
+    display: none;
+}
+
+.cover-open {
+    .cover {
+        display: block;
     }
 }
 

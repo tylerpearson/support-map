@@ -63,9 +63,11 @@
 
 
     <div class="big-content">
-        <script id="friend-template" type="text/x-handlebars-template">
+        <script id="friends-template" type="text/x-handlebars-template">
+            <h2 class="friends-title">Looks like you have <span class="friends-count">0</span> friends in this district! Help spread the word by sharing with them!</h2>
+
             {{#each this}}
-                <div class="friend-container" data-uid="{{ uid }}">
+                <div class="friend-container friend-{{@index}} {{#compare @index "<" 6}}friend-visible{{/compare}}" data-uid="{{ uid }}">
                     <div class="avatar-wrap">
                         <div class="avatar" style="background-image: url({{ image_normal_url }});"></div>
                     </div>
@@ -74,7 +76,11 @@
                         <p class="location-name">{{ city }}</p>
                     </div>
                 </div>
+            {{else}}
+                <p><a href="#">You have no friends!</a></p>
             {{/each}}
+
+                <p><a href="#" class="show-more-friends">Show more friends</a></p>
         </script>
     </div><!--end .big-container -->
 

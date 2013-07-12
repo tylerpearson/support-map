@@ -4,8 +4,10 @@ $(document).ready ->
 
   $editUser = $(".edit_user")
 
-  hideMain = ->
+  hideMain = (hideCover) ->
     $('body').addClass('hide-main')
+    if hideCover is true
+      $('body').removeClass('cover-open')
 
   addMarker = (lat, lng, title, description) ->
     L.mapbox.markerLayer(
@@ -20,21 +22,19 @@ $(document).ready ->
         "marker-size": "medium"
         "marker-color": "#68c14d"
     ).addTo window.map
-    console.log "added"
 
   if $.cookie("added_name")
-    hideMain()
+    hideMain(true)
 
   $('.continue-link').click ->
-    hideMain()
+    hideMain(false)
 
   $('.update-endorsement-form').on 'submit', (e) ->
     $('.endorsement-submit').attr('disabled','disabled').val('Submitting...')
 
 
   $editUser.on("ajax:success", (e, data, status, xhr) ->
-    hideMain()
-    console.log(data)
+    hideMain(false)
     addMarker(data.latitude, data.longitude, data.name, data.comment)
     App.friends.init();
   ).bind "ajax:error", (e, xhr, status, error) ->
