@@ -1,0 +1,99 @@
+.main-open {
+    .top-info {
+        display: none;
+    }
+}
+
+
+.big-content {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    width: 80%;
+    //background-color: #fff;
+    //background-color: rgba(#fff,0.5);
+    //min-height: 400px;
+    max-height: 100%;
+    border-radius: 3px;
+    //padding: 40px;
+    display: none;
+    z-index: 14;
+    text-align: center;
+
+    .main-open & {
+        display: block;
+    }
+}
+
+    .friend-container {
+        display: inline-block;
+        width: 22%;
+        margin: 0 10px 20px 10px;
+        cursor: pointer;
+        padding: 7px 5px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgba(0,0,0,.11);
+
+        &:hover {
+
+
+            .friend-name {
+                color: $green;
+            }
+        }
+        &:hover {
+            position: relative;
+            top: 1px;
+        }
+
+        &.friend-selected {
+            position: relative;
+            top: 1px;
+            .friend-name {
+                color: $green;
+            }
+        }
+    }
+
+
+    .avatar-wrap {
+        width: 30%;
+        text-align: center;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+        .avatar {
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 55px;
+            height: 55px;
+            background-position: center center;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: inset 1px 1px 3px rgba(0,0,0,.33);
+        }
+
+    .friend-info {
+        display: inline-block;
+        text-align: left;
+        width: 65%;
+        vertical-align: middle;
+    }
+
+        .friend-name {
+            font-size: 16px;
+            color: $blue-dark;
+            margin: 0 0 5px 0;
+        }
+
+        .location-name {
+            font-size: 13px;
+            margin: 0;
+        }

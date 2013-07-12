@@ -62,13 +62,20 @@
     </div><!--end .main -->
 
 
-    <div class="big-container">
+    <div class="big-content">
         <script id="friend-template" type="text/x-handlebars-template">
-            {{#each }}
-              <p>{{ name }}</p>
+            {{#each this}}
+                <div class="friend-container" data-uid="{{ uid }}">
+                    <div class="avatar-wrap">
+                        <div class="avatar" style="background-image: url({{ image_normal_url }});"></div>
+                    </div>
+                    <div class="friend-info">
+                        <h1 class="friend-name">{{ name }}</h1>
+                        <p class="location-name">{{ city }}</p>
+                    </div>
+                </div>
             {{/each}}
         </script>
     </div><!--end .big-container -->
-
 
 <div id="map"></div><!--end #map -->
