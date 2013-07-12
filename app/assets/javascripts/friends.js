@@ -5,7 +5,7 @@ App.friends = (function($, App, Handlebars) {
     "use strict";
 
     var allFriends = [],
-        friendsVisible = 6 - 1,
+        friendsVisible = 9 - 1,
 
         $elems = {
             body: $('body')
@@ -37,7 +37,7 @@ App.friends = (function($, App, Handlebars) {
 
             var i;
 
-            for (i = 0; i < 6; i++) {
+            for (i = 0; i < 9; i++) {
                 friendsVisible += 1;
                 $('.friend-' + friendsVisible).addClass('friend-visible');
             }
