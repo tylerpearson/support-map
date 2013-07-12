@@ -39,12 +39,8 @@ App.friends = (function($, App, Handlebars) {
 
             for (i = 0; i < 6; i++) {
                 friendsVisible += 1;
-              console.log($('.friend-' + friendsVisible));
                 $('.friend-' + friendsVisible).addClass('friend-visible');
-                console.log(friendsVisible);
             }
-
-            console.log("Friends visible: " + friendsVisible);
         },
         getFriends = function() {
             $.ajax({
