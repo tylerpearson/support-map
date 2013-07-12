@@ -23,6 +23,11 @@
                             <%= f.label :comment, "Share why you are supporting #{ENV['CAMPAIGN_NAME']}" %>
                             <%= f.text_area :comment %>
                         </fieldset>
+
+                        <fieldset class="checkbox-row">
+                            <%= check_box_tag 'share', 'yes', true %>
+                            <%= label_tag 'share', "Share my endorsement on Facebook" %>
+                        </fieldset>
                     </div>
 
                     <div class="row light-bg center">
@@ -47,13 +52,23 @@
                     <%= link_to "Add your name with Facebook", "/auth/facebook", id: "sign-in", class: "btn btn-facebook" %>
                 </div>
 
-
+                <div class="row continue-row">
+                    <a href="#" class="continue-link">Skip signup and view map &rarr;</a>
+                </div>
 
             <% end %>
 
         </div><!--end .main-interior -->
     </div><!--end .main -->
 
+
+    <div class="big-container">
+        <script id="friend-template" type="text/x-handlebars-template">
+            {{#each }}
+              <p>{{ name }}</p>
+            {{/each}}
+        </script>
+    </div><!--end .big-container -->
 
 
 <div id="map"></div><!--end #map -->

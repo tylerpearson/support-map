@@ -61,3 +61,14 @@
     }
 
 }
+
+  .checkbox-row {
+        text-align: center;
+        input[type="checkbox"] {
+            display: inline-block;
+            width: 8%;
+        }
+        label {
+            display: inline-block;
+        }
+  }

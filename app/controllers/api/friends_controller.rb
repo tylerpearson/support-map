@@ -29,7 +29,7 @@ class Api::FriendsController < ApplicationController
     end
 
     respond_to do |format|
-      format.json { render json: @friends }
+      format.json { render template: "api/friends/index.json.jbuilder" }
     end
   end
 
@@ -48,7 +48,8 @@ class Api::FriendsController < ApplicationController
           first_name: friend["first_name"],
           last_name: friend["last_name"],
           location_id: location.id,
-          image_url: friend["picture"]["data"]["url"]
+          image_url: friend["picture"]["data"]["url"],
+          username: friend['username']
         )
       else
         return

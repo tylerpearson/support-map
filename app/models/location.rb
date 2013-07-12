@@ -2,6 +2,8 @@ class Location < ActiveRecord::Base
 
   validates :name, :presence => true, :uniqueness => true
 
+  has_many :friends
+
   geocoded_by :name
 
   after_validation :add_city_and_state_info

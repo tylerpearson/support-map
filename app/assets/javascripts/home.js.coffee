@@ -25,6 +25,9 @@ $(document).ready ->
   if $.cookie("added_name")
     hideMain()
 
+  $('.continue-link').click ->
+    hideMain()
+
   $('.update-endorsement-form').on 'submit', (e) ->
     $('.endorsement-submit').attr('disabled','disabled').val('Submitting...')
 
@@ -33,6 +36,8 @@ $(document).ready ->
     hideMain()
     console.log(data)
     addMarker(data.latitude, data.longitude, data.name, data.comment)
+    App.friends.init();
   ).bind "ajax:error", (e, xhr, status, error) ->
     $('.endorsement-submit').removeAttr('disabled')
     $('.content').html "<p class=\"error\">Error. Please try again.</p>"
+

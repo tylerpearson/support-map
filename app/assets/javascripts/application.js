@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require jquery.cookie
 //= require mapbox.js
+//= require Handlebars
 //= require leaflet.markercluster.js
+//= require friends.js
 //= require map.js
 //= require facebook
 //= require home
