@@ -41,7 +41,7 @@ App.friends = (function($, App, Handlebars) {
                     $('.friend-' + friendsVisible).addClass('friend-visible');
                 } else {
                     friendsVisible = 0 - 1;
-                    continue;
+                    break;
                 }
             }
         },
@@ -58,8 +58,29 @@ App.friends = (function($, App, Handlebars) {
         hideFriendsSection = function() {
             $elems.body.removeClass('main-open').removeClass('cover-open');
         },
-        handleFriendClick = function() {
-            $(this).toggleClass('friend-selected');
+        handleFriendClick = function(that) {
+            var $this = $(that),
+                friend = {
+                    firstName: $this.data('firstname'),
+                    lastName: $this.data('lastname'),
+                    name: $this.data('name'),
+                    uid: $this.data('uid')
+                };
+
+            $this.toggleClass('friend-selected');
+
+            FB.ui({
+                method: 'feed',
+                to: friend.uid,
+                name: friend.firstName + ', join me in supporting this candidate!',
+                caption: 'FriendtheVote.com',
+                description: 'I just committed to vote for this candidate. Election Day is November 6 &mdash; make a difference this year and join us.',
+                // link: url,
+                // picture: fbImageUrl,
+                // actions: [{ name: 'Commit to vote too', link: url }],
+                user_message_prompt: 'Tell your friends to vote'
+            });
+
         };
 
 
@@ -68,7 +89,10 @@ App.friends = (function($, App, Handlebars) {
             getFriends();
 
             $(document)
-                .on('click', '.friend-container', handleFriendClick)
+                .on('click', '.friend-container', function(e) {
+                    e.preventDefault();
+                    handleFriendClick(this);
+                })
                 .on('click', '.show-more-friends', function(e) {
                     e.preventDefault();
                     showMoreFriends();

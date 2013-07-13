@@ -25,7 +25,6 @@
     color: #fff;
     font-size: 18px;
     margin-bottom: 20px;
-    text-shadow: 0 1px 1px rgba(darken($blue-dark,30%),0.9);
 }
 
     .friend-container {
@@ -33,7 +32,7 @@
         width: 25%;
         margin: 0 10px 20px 10px;
         cursor: pointer;
-        padding: 7px 5px;
+        padding: 9px 5px;
         background-color: #fff;
         border-radius: 3px;
         box-shadow: 0 2px 5px rgba(0,0,0,.11);
@@ -49,8 +48,15 @@
         &.friend-selected {
             position: relative;
             top: 1px;
+            background-color: $blue-dark;
             .friend-name {
-                color: $green;
+                color: #fff;
+            }
+            .friend-info {
+                color: #fff;
+            }
+            .avatar {
+                // box-shadow: inset 1px 1px 3px rgba(0,0,0,.5);
             }
         }
         &.friend-visible {
@@ -71,14 +77,6 @@
             }
         }
 
-        .show-more-friends {
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-
 
     .avatar-wrap {
         width: 30%;
@@ -94,9 +92,10 @@
             height: 55px;
             background-position: center center;
             display: inline-block;
+            vertical-align: middle;
             border-radius: 50%;
             margin: 0 auto;
-            box-shadow: inset 1px 1px 3px rgba(0,0,0,.33);
+            // box-shadow: 1px 1px 2px rgba(0,0,0,.33);
         }
 
     .friend-info {
