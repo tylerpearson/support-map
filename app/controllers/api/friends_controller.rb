@@ -8,7 +8,7 @@ class Api::FriendsController < ApplicationController
   end
 
   def index
-    @friends = @graph.get_connections("me", "friends", "fields"=>"id,name,location,first_name,last_name,picture")
+    @friends = @graph.get_connections("me", "friends", "fields"=>"id,name,location,first_name,last_name,username,picture,gender")
 
     if ENV["CAMPAIGN_TYPE"].downcase == "state" || ENV["CAMPAIGN_TYPE"].downcase == "senate"
       @friends.map! do |friend|
@@ -49,7 +49,8 @@ class Api::FriendsController < ApplicationController
           last_name: friend["last_name"],
           location_id: location.id,
           image_url: friend["picture"]["data"]["url"],
-          username: friend['username']
+          username: friend['username'],
+          gender: friend['gender']
         )
       else
         return
@@ -73,7 +74,9 @@ class Api::FriendsController < ApplicationController
           first_name: friend["first_name"],
           last_name: friend["last_name"],
           location_id: location.id,
-          image_url: friend["picture"]["data"]["url"]
+          image_url: friend["picture"]["data"]["url"],
+          username: friend['username'],
+          gender: friend['gender']
         )
       end
       current_friend

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130711181720) do
+ActiveRecord::Schema.define(version: 20130713043911) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20130711181720) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.string   "gender"
   end
 
   add_index "friends", ["name"], name: "index_friends_on_name"
