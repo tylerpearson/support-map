@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
+  has_many :invitations
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
