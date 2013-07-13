@@ -16,9 +16,8 @@ App.friends = (function($, App, Handlebars) {
         },
 
         handleFriends = function(data) {
-
             if (data.length) {
-                allFriends  = shuffle(data).slice(0, 99);
+                allFriends  = shuffle(data);
 
                 var source   = $("#friends-template").html(),
                     template = Handlebars.compile(source),
@@ -30,16 +29,20 @@ App.friends = (function($, App, Handlebars) {
             } else {
                 hideFriendsSection();
             }
-
         },
         showMoreFriends = function() {
-            $('.friend-visible').removeClass('friend-visible');
-
             var i;
+
+            $('.friend-visible').removeClass('friend-visible');
 
             for (i = 0; i < 9; i++) {
                 friendsVisible += 1;
-                $('.friend-' + friendsVisible).addClass('friend-visible');
+                if (friendsVisible !== allFriends.length) {
+                    $('.friend-' + friendsVisible).addClass('friend-visible');
+                } else {
+                    friendsVisible = 0 - 1;
+                    continue;
+                }
             }
         },
         getFriends = function() {
@@ -64,11 +67,12 @@ App.friends = (function($, App, Handlebars) {
         init: function() {
             getFriends();
 
-            $(document).on('click', '.friend-container', handleFriendClick);
-            $(document).on('click', '.show-more-friends', function(e) {
-                e.preventDefault();
-                showMoreFriends();
-            });
+            $(document)
+                .on('click', '.friend-container', handleFriendClick)
+                .on('click', '.show-more-friends', function(e) {
+                    e.preventDefault();
+                    showMoreFriends();
+                });
         }
     };
 
@@ -81,49 +85,3 @@ App.friends = (function($, App, Handlebars) {
 
 
 }(jQuery, App, Handlebars));
-
-
-
-
-
-
-
-Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
-
-    var operators, result;
-
-    if (arguments.length < 3) {
-        throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
-    }
-
-    if (options === undefined) {
-        options = rvalue;
-        rvalue = operator;
-        operator = "===";
-    }
-
-    operators = {
-        '==': function (l, r) { return l == r; },
-        '===': function (l, r) { return l === r; },
-        '!=': function (l, r) { return l != r; },
-        '!==': function (l, r) { return l !== r; },
-        '<': function (l, r) { return l < r; },
-        '>': function (l, r) { return l > r; },
-        '<=': function (l, r) { return l <= r; },
-        '>=': function (l, r) { return l >= r; },
-        'typeof': function (l, r) { return typeof l == r; }
-    };
-
-    if (!operators[operator]) {
-        throw new Error("Handlerbars Helper 'compare' doesn't know the operator " + operator);
-    }
-
-    result = operators[operator](lvalue, rvalue);
-
-    if (result) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-
-});
