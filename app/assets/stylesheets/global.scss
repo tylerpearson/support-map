@@ -10,6 +10,7 @@ html, body {
     font-family: $font-primary;
     color: #666;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -37,11 +38,16 @@ a {
     border-radius: 3px;
     text-decoration: none;
     font-size: 14px;
+    font-weight: bold;
     &:hover {
         background-color: $blue-dark;
         color: #fff;
     }
+    &.small-btn {
+        padding: 10px 20px;
+    }
 }
+
 
 .btn-facebook {
     background-image: url('/assets/facebook-icon.png');
@@ -116,7 +122,7 @@ a {
     right: 0;
     bottom: 0;
     z-index: 9;
-    background-color: rgba($blue-dark,0.5);
+    background-color: rgba($blue-dark,0.7);
 }
 
 .title {

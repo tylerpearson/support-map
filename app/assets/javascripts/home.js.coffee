@@ -27,7 +27,7 @@ $(document).ready ->
     hideMain(true)
 
   $('.continue-link').click ->
-    hideMain(false)
+    hideMain(true)
 
   $('.update-endorsement-form').on 'submit', (e) ->
     $('.endorsement-submit').attr('disabled','disabled').val('Submitting...')
