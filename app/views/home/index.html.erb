@@ -64,7 +64,7 @@
 
     <div class="big-content">
         <script id="friends-template" type="text/x-handlebars-template">
-            <h2 class="friends-title">Looks like you have <span class="friends-count">0</span> friends in this district! Help spread the word by sharing with them!</h2>
+            <h2 class="friends-title">Looks like you have <span class="friends-count">some</span> friends in this district! Help spread the word by sharing with them!</h2>
 
             {{#each this}}
                 <div class="friend-container friend-{{@index}} {{#compare @index "<" 9}}friend-visible{{/compare}}" data-uid="{{ uid }}">
@@ -80,7 +80,7 @@
                 <p><a href="#">You have no friends!</a></p>
             {{/each}}
 
-                <p><a href="#" class="show-more-friends">Show more friends</a></p>
+                <p><a href="#" class="show-more-friends" class="btn small-btn">Show more friends</a></p>
         </script>
     </div><!--end .big-container -->
 

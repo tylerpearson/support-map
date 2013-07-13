@@ -89,11 +89,7 @@
     }
 
         .avatar {
-            background-size: cover;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
+            @extend .cover-all;
             width: 55px;
             height: 55px;
             background-position: center center;
