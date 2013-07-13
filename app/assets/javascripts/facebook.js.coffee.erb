@@ -8,12 +8,7 @@ jQuery ->
 
 
 window.fbAsyncInit = ->
-  FB.init(appId: '355359997924701', cookie: true)
-
-  # $('#sign-in').click (e) ->
-  #   e.preventDefault()
-  #   FB.login ((response) ->
-  #     window.location = '/auth/facebook/callback' if response.authResponse), scope: "email,user_about_me,user_interests,user_likes,user_location,friends_location,user_photos"
+  FB.init(appId: ENV['FACEBOOK_APP_ID'], cookie: true)
 
   $('#sign-out').click (e) ->
     $.removeCookie('added_name');

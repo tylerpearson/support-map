@@ -6,6 +6,7 @@ EndorsementMap::Application.routes.draw do
 
   namespace :api do
     resources :friends, :defaults => { :format => 'json' }
+    resources :invitations, :defaults => { :format => 'json' }
   end
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

@@ -12,7 +12,8 @@ App.friends = (function($, App, Handlebars) {
         },
 
         api = {
-            getFriends: "/api/friends.json"
+            getFriends: "/api/friends.json",
+            addInvitation: "/api/invitations.json"
         },
 
         handleFriends = function(data) {
@@ -58,8 +59,8 @@ App.friends = (function($, App, Handlebars) {
         hideFriendsSection = function() {
             $elems.body.removeClass('main-open').removeClass('cover-open');
         },
-        handleFriendClick = function(that) {
-            var $this = $(that),
+        handleFriendClick = function(elem) {
+            var $this = $(elem),
                 friend = {
                     firstName: $this.data('firstname'),
                     lastName: $this.data('lastname'),
@@ -79,10 +80,21 @@ App.friends = (function($, App, Handlebars) {
                 // picture: fbImageUrl,
                 // actions: [{ name: 'Commit to vote too', link: url }],
                 user_message_prompt: 'Tell your friends to vote'
+            }, function () {
+                sendInvitationNotification(friend.uid, $this);
             });
 
+        },
+        sendInvitationNotification = function(friendId, elem) {
+            $.ajax({
+                type: "POST",
+                dataType: "html",
+                data: {friend_uid: friendId},
+                url: api.addInvitation
+            }).done(function() {
+                elem.addClass('notified');
+            });
         };
-
 
     return {
         init: function() {

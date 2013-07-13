@@ -95,7 +95,6 @@
             vertical-align: middle;
             border-radius: 50%;
             margin: 0 auto;
-            // box-shadow: 1px 1px 2px rgba(0,0,0,.33);
         }
 
     .friend-info {
@@ -103,6 +102,8 @@
         text-align: left;
         width: 65%;
         vertical-align: middle;
+        position: relative;
+        z-index: 17;
     }
 
         .friend-name {
@@ -115,3 +116,24 @@
             font-size: 13px;
             margin: 0;
         }
+
+    .checkmark {
+        display: none;
+        width: 32px;
+        height: 32px;
+        background-color: $green;
+        // box-shadow: 0 2px 5px rgba(0,0,0,.11);
+        background-image: image-url('checkmark.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 19px 19px;
+        border-radius: 50%;
+        z-index: 14;
+        position: absolute;
+        right: -6px;
+        bottom: -6px;
+        @extend .fade-in;
+        .notified & {
+            display: block;
+        }
+    }
