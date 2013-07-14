@@ -66,7 +66,8 @@ App.friends = (function($, App, Handlebars) {
                     lastName: $this.data('lastname'),
                     name: $this.data('name'),
                     uid: $this.data('uid')
-                };
+                },
+                linkURL = window.location.href;
 
             $this.toggleClass('friend-selected');
 
@@ -76,12 +77,14 @@ App.friends = (function($, App, Handlebars) {
                 name: friend.firstName + ', join me in supporting this candidate!',
                 caption: 'FriendtheVote.com',
                 description: 'I just committed to vote for this candidate. Election Day is November 6 &mdash; make a difference this year and join us.',
-                // link: url,
+                link: linkURL,
                 // picture: fbImageUrl,
-                // actions: [{ name: 'Commit to vote too', link: url }],
+                actions: [{ name: 'Commit to vote too', link: linkURL }],
                 user_message_prompt: 'Tell your friends to vote'
-            }, function () {
-                sendInvitationNotification(friend.uid, $this);
+            }, function (response) {
+                if (response && response.post_id) {
+                    sendInvitationNotification(friend.uid, $this);
+                }
             });
 
         },

@@ -17,8 +17,9 @@
 //= require Handlebars
 //= require Handlebars.helpers
 //= require leaflet.markercluster.js
-//= require friends.js
-//= require map.js
+//= require app.util.js
+//= require app.friends.js
+//= require app.maps.js
 //= require facebook
 //= require home
 // require_tree .

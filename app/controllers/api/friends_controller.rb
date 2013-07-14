@@ -42,7 +42,7 @@ class Api::FriendsController < ApplicationController
 
       if state.downcase == ENV["CAMPAIGN_STATE_FULL"].downcase
         location = Location.find_or_create_by(name: fb_location)
-        current_friend = Friend.find_or_create_by(
+        current_friend = current_user.friends.find_or_create_by(
           uid: friend["id"],
           name: friend["name"],
           first_name: friend["first_name"],
@@ -68,7 +68,7 @@ class Api::FriendsController < ApplicationController
       end
 
       if location.congressional_district == ENV["CAMPAIGN_CONGRESSIONAL_DISTRICT"] && location.state.downcase == ENV["CAMPAIGN_STATE_FULL"].downcase
-        current_friend = Friend.find_or_create_by(
+        current_friend = current_user.friends.find_or_create_by(
           uid: friend["id"],
           name: friend["name"],
           first_name: friend["first_name"],

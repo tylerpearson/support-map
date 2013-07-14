@@ -137,3 +137,12 @@
             display: block;
         }
     }
+
+.friends-continue-link {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    &:hover {
+        color: $green;
+    }
+}

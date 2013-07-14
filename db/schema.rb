@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130713182215) do
+ActiveRecord::Schema.define(version: 20130714020108) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(version: 20130713182215) do
   add_index "friends", ["name"], name: "index_friends_on_name"
   add_index "friends", ["uid"], name: "index_friends_on_uid"
 
+  create_table "friends_users", id: false, force: true do |t|
+    t.integer "friend_id"
+    t.integer "user_id"
+  end
+
+  add_index "friends_users", ["friend_id", "user_id"], name: "index_friends_users_on_friend_id_and_user_id", unique: true
+
   create_table "invitations", force: true do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
@@ -79,6 +86,8 @@ ActiveRecord::Schema.define(version: 20130713182215) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "locations", ["name"], name: "index_locations_on_name", unique: true
 
   create_table "users", force: true do |t|
     t.string   "provider"
