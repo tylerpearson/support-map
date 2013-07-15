@@ -29,7 +29,6 @@ App.maps = (function($, App) {
         setUpMap: function(lat, lng) {
 
             // for (var i = 0; i < addressPoints.length; i++) {
-
             //   var a = addressPoints[i],
             //       title = a.properties.title,
             //       marker = L.marker(new L.LatLng(a.geometry.coordinates[1], a.geometry.coordinates[0]), {
@@ -57,7 +56,6 @@ App.maps = (function($, App) {
             map.addLayer(markers).setView([lat, lng], 8);
         },
         init: function() {
-            console.log("MAPS ARE LOADED");
             App.maps.setUpMap(37.948,-79.767);
         }
     };

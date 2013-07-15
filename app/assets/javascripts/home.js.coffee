@@ -5,7 +5,7 @@ $(document).ready ->
   if $.cookie("added_name")
     App.util.hideMain(true)
 
-  $('.js-continue-link').click ->
+  $(document).on 'click', '.js-continue-link', (e) ->
     App.util.hideMain(true)
 
   $('.update-endorsement-form').on 'submit', (e) ->

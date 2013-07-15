@@ -8,7 +8,8 @@ App.friends = (function($, App, Handlebars) {
         friendsVisible = 9 - 1,
 
         $elems = {
-            body: $('body')
+            body: $('body'),
+            loading: $('.loading')
         },
 
         api = {
@@ -17,6 +18,7 @@ App.friends = (function($, App, Handlebars) {
         },
 
         handleFriends = function(data) {
+
             if (data.length) {
                 allFriends  = shuffle(data);
 
@@ -24,12 +26,14 @@ App.friends = (function($, App, Handlebars) {
                     template = Handlebars.compile(source),
                     html     = template(allFriends);
 
-                $('.big-content').append(html);
                 $elems.body.addClass('main-open');
+
+                $('.big-content').html(html);
                 $('.friends-count').text(data.length);
             } else {
                 hideFriendsSection();
             }
+            App.util.loadingHide(250);
         },
         showMoreFriends = function() {
             var i;
@@ -47,6 +51,7 @@ App.friends = (function($, App, Handlebars) {
             }
         },
         getFriends = function() {
+            App.util.loadingShow(250);
             $.ajax({
                 type: "GET",
                 dataType: "json",
@@ -55,9 +60,6 @@ App.friends = (function($, App, Handlebars) {
                     handleFriends(data);
                 }
             });
-        },
-        hideFriendsSection = function() {
-            $elems.body.removeClass('main-open').removeClass('cover-open');
         },
         handleFriendClick = function(elem) {
             var $this = $(elem),
@@ -112,6 +114,9 @@ App.friends = (function($, App, Handlebars) {
                     e.preventDefault();
                     showMoreFriends();
                 });
+        },
+        hideFriendsSection: function() {
+            $elems.body.removeClass('main-open').removeClass('cover-open');
         }
     };
 

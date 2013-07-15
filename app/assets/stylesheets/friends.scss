@@ -4,6 +4,20 @@
     }
 }
 
+.loading {
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    left: 50%;
+    margin-left: -150px;
+    top: 20%;
+    z-index: 20;
+    font-weight: bold;
+
+    display: none;
+}
 
 .big-content {
     position: absolute;
@@ -140,9 +154,10 @@
 
 .friends-continue-link {
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
+    margin-top: 10px;
     &:hover {
-        color: $green;
+        color: lighten($blue-dark,25%);
     }
 }
