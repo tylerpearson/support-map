@@ -1,0 +1,28 @@
+# Add application configuration variables here, as shown below.
+#
+# PUSHER_APP_ID: "2954"
+# PUSHER_KEY: 7381a978f7dd7f9a1117
+# PUSHER_SECRET: abdc3b896a0ffb85d373
+# STRIPE_API_KEY: EdAvEPVEC3LuaTg5Q3z6WbDVqZlcBQ8Z
+# STRIPE_PUBLIC_KEY: pk_BRgD57O8fHja9HxduJUszhef6jCyS
+
+
+# Facebook
+FACEBOOK_APP_ID: "355359997924701"
+FACEBOOK_SECRET: "78f3afeb4cedf5880b0a6e26ffbcc827"
+
+# Campaign info
+CAMPAIGN_NAME: "David Price for Congress"
+CAMPAIGN_TYPE: "congress" # congress, state, senate
+CAMPAIGN_CONGRESSIONAL_DISTRICT: "4" # e.g. "10". Leave blank if this isn't a congressional race. Use a string instead of a number
+CAMPAIGN_STATE_FULL: "North Carolina"
+CAMPAIGN_STATE_ABBR: "NC"
+
+INTRO_HTML: "<p>Add your name velit massa placerat tortor ut aenean cursus nec, magna eu ac.</p>"
+
+# Facebook share info
+FB_LINK_NAME: "I just made an endorsement"
+FB_LINK_URL: "http://www.example.com"
+FB_LINK_CAPTION: "I'm a sample caption"
+FB_LINK_DESCRIPTION: "I'm the link description"
+FB_LINK_PICTURE_URL: "http://www.example.com/sampleurl.png"
