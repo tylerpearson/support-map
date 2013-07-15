@@ -1,6 +1,6 @@
 var App = App || {};
 
-App.friends = (function($, App, Handlebars) {
+App.friends = (function ($, App, Handlebars) {
 
     "use strict";
 
@@ -17,7 +17,7 @@ App.friends = (function($, App, Handlebars) {
             addInvitation: "/api/invitations.json"
         },
 
-        handleFriends = function(data) {
+        handleFriends = function (data) {
 
             if (data.length) {
                 allFriends  = shuffle(data);
@@ -35,7 +35,7 @@ App.friends = (function($, App, Handlebars) {
             }
             App.util.loadingHide(250);
         },
-        showMoreFriends = function() {
+        showMoreFriends = function () {
             var i;
 
             $('.friend-visible').removeClass('friend-visible');
@@ -50,7 +50,7 @@ App.friends = (function($, App, Handlebars) {
                 }
             }
         },
-        getFriends = function() {
+        getFriends = function () {
             App.util.loadingShow(250);
             $.ajax({
                 type: "GET",
