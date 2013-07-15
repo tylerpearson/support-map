@@ -22,6 +22,6 @@ $(document).ready ->
     $('.endorsement-submit').removeAttr('disabled')
     $('.content').html "<p class=\"error\">Error. Please try again.</p>"
 
-
+  # initialize the maps
   App.maps.init();
 
