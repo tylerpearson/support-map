@@ -12,11 +12,11 @@ FACEBOOK_APP_ID: "355359997924701"
 FACEBOOK_SECRET: "78f3afeb4cedf5880b0a6e26ffbcc827"
 
 # Campaign info
-CAMPAIGN_NAME: "David Price for Congress"
-CAMPAIGN_TYPE: "congress" # congress, state, senate
-CAMPAIGN_CONGRESSIONAL_DISTRICT: "4" # e.g. "10". Leave blank if this isn't a congressional race. Use a string instead of a number
-CAMPAIGN_STATE_FULL: "North Carolina"
-CAMPAIGN_STATE_ABBR: "NC"
+CAMPAIGN_NAME: "Mark Herring for Virginia"
+CAMPAIGN_TYPE: "state" # congress, state, senate
+CAMPAIGN_CONGRESSIONAL_DISTRICT: "" # e.g. "10". Leave blank if this isn't a congressional race. Use a string instead of a number
+CAMPAIGN_STATE_FULL: "Virginia"
+CAMPAIGN_STATE_ABBR: "VA"
 
 INTRO_HTML: "<p>Add your name velit massa placerat tortor ut aenean cursus nec, magna eu ac.</p>"
 
