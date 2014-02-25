@@ -6,7 +6,7 @@ App.intro = (function($, App) {
 
     return {
         init: function() {
-            console.log("woot");
+            // console.log("App loaded");
         }
     };
 
