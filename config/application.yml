@@ -12,7 +12,7 @@ FACEBOOK_APP_ID: "355359997924701"
 FACEBOOK_SECRET: "78f3afeb4cedf5880b0a6e26ffbcc827"
 
 # Campaign info
-CAMPAIGN_NAME: "Mark Herring for Virginia"
+CAMPAIGN_NAME: "John Doe"
 CAMPAIGN_TYPE: "state" # congress, state, senate
 CAMPAIGN_CONGRESSIONAL_DISTRICT: "" # e.g. "10". Leave blank if this isn't a congressional race. Use a string instead of a number
 CAMPAIGN_STATE_FULL: "Virginia"

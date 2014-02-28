@@ -10,15 +10,15 @@ gem 'sqlite3', :group => :development
 gem 'pg', :group => :production
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-gem "sass_rails_patch", "~> 0.0.1"
+gem 'sass-rails'
+gem "sass_rails_patch"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
-gem 'coffee-script-source', '~> 1.4.0'
+gem 'coffee-script-source'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -34,16 +34,14 @@ gem 'figaro'
 gem 'httparty'
 
 gem 'omniauth-facebook', '1.4.0'
-gem "koala", "~> 1.7.0rc1"
+gem "koala", "~> 1.8.0rc1"
 
 # geocoding info
 gem "geocoder"
 
 # admin panel
-gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
-gem 'ransack',             github: 'ernie/ransack',         branch: 'rails-4'
-gem 'inherited_resources', github: 'josevalim/inherited_resources'
-gem 'formtastic',          github: 'justinfrench/formtastic'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'formtastic'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "gon"
