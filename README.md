@@ -1,6 +1,7 @@
 # Support Map
 
 This is a rails app to map supporters in a state/district. The app is heavily integrated with Facebook, which enables the ability to
+
 1. have users share their support of a candidate or issue directly to Facebook
 2. have users encourage their friends to support the candidate or issue
 3. save the user's Facebook connections that are within the area/district. This allows [the information to be used for targeting near election day](http://swampland.time.com/2012/11/20/friended-how-the-obama-campaign-connected-with-young-voters/), for example with a follow-up email asking them to reach out to specific friends.
