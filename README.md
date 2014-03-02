@@ -51,6 +51,10 @@ FB_LINK_DESCRIPTION: "I'm the link description"
 FB_LINK_PICTURE_URL: "http://www.example.com/sampleurl.png"
 ```
 
+### Map
+
+This app uses [Mapbox](https://www.mapbox.com/) for the map. The `window.map` variable in `maps.js` is currently using a map I created -- please make sure to change this to your own map.
+
 ### Admin area
 
 To view signups, visit `/admin` where ActiveAdmin is mounted. The default login info for ActiveAdmin is `admin@example.com` and `password`.
